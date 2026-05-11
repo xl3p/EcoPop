@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://ku5h7aax185j"]
+
+[ext_resource type="Texture2D" uid="uid://yn72l2hqc6xx" path="res://Солнце-Photoroom.png" id="1_q6m4y"]
+[ext_resource type="Texture2D" uid="uid://cbpaw4witqqaw" path="res://Back-Photoroom.png" id="2_g653o"]
+[ext_resource type="Script" uid="uid://kiyxaskvwi4v" path="res://meadow_info_back_button.gd" id="3_neflx"]
+
+[node name="Node2D" type="Node2D" unique_id=1915829439]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=247951918]
+color = Color(0.025363795, 0.025363805, 0.02536378, 1)
+polygon = PackedVector2Array(0, 1920, 1000, 1920, 1000, 0, 0, 0)
+
+[node name="Control" type="Control" parent="." unique_id=1509211792]
+layout_mode = 3
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Стрелка" type="Label" parent="Control" unique_id=2095228903]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 627.0
+offset_right = 480.0
+offset_bottom = 690.0
+theme_override_font_sizes/font_size = 45
+text = "/\\"
+metadata/_edit_use_anchors_ = true
+
+[node name="Водоросль" type="Label" parent="Control" unique_id=707962194]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 761.0
+offset_right = 588.0
+offset_bottom = 824.0
+theme_override_font_sizes/font_size = 45
+text = " Клевер,
+ одуванчик"
+metadata/_edit_use_anchors_ = true
+
+[node name="Стрелка2" type="Label" parent="Control" unique_id=2095136431]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 889.0
+offset_right = 480.0
+offset_bottom = 952.0
+theme_override_font_sizes/font_size = 45
+text = "/\\"
+metadata/_edit_use_anchors_ = true
+
+[node name="Головастик" type="Label" parent="Control" unique_id=785504293]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 1010.0
+offset_right = 604.0
+offset_bottom = 1073.0
+theme_override_font_sizes/font_size = 45
+text = "Кузнечик, 
+бабочка"
+metadata/_edit_use_anchors_ = true
+
+[node name="Стрелка3" type="Label" parent="Control" unique_id=722015268]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 1146.0
+offset_right = 483.0
+offset_bottom = 1209.0
+theme_override_font_sizes/font_size = 45
+text = "/\\"
+metadata/_edit_use_anchors_ = true
+
+[node name="Стрекоза" type="Label" parent="Control" unique_id=822707482]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 1280.0
+offset_right = 610.0
+offset_bottom = 1343.0
+theme_override_font_sizes/font_size = 45
+text = "Ящерица"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=1460834712]
+position = Vector2(500, 297)
+texture = ExtResource("1_q6m4y")
+
+[node name="MeadowInfoBackButton" type="TouchScreenButton" parent="Control" unique_id=348621635]
+position = Vector2(-23, 111.00001)
+scale = Vector2(0.37613094, 0.37083334)
+texture_normal = ExtResource("2_g653o")
+script = ExtResource("3_neflx")
+
+[connection signal="pressed" from="Control/MeadowInfoBackButton" to="Control/MeadowInfoBackButton" method="_on_pressed"]

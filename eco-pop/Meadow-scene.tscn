@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cv48liiwjk16o"]
+
+[ext_resource type="Texture2D" uid="uid://c65oo0gqde71j" path="res://Meadow.jpg" id="1_wx0oh"]
+[ext_resource type="Texture2D" uid="uid://d0opjbsj2lv31" path="res://info-Photoroom.png" id="2_obqhc"]
+[ext_resource type="Script" uid="uid://dud7788i5c0xt" path="res://meadow_info_button.gd" id="3_0mjat"]
+[ext_resource type="Texture2D" uid="uid://cbpaw4witqqaw" path="res://Back-Photoroom.png" id="3_40yrc"]
+[ext_resource type="Script" uid="uid://upcj0cpx5h0d" path="res://back_to_menu.gd" id="4_0mjat"]
+[ext_resource type="Script" uid="uid://dqpjprj13q41p" path="res://Meadow_area_2d.gd" id="4_yluqv"]
+[ext_resource type="PackedScene" uid="uid://c6euvuyc28crl" path="res://Menu-scene.tscn" id="6_pfbe1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfbe1"]
+size = Vector2(1000, 1216)
+
+[node name="Node2D" type="Node2D" unique_id=1958088605]
+
+[node name="Control" type="Control" parent="." unique_id=10210011]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="BG Container" type="Container" parent="Control" unique_id=1195054843]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/BG Container" unique_id=1164855117]
+position = Vector2(499.18927, 451.87476)
+scale = Vector2(2.1215644, 2.1215646)
+texture = ExtResource("1_wx0oh")
+
+[node name="InfoBtn Container" type="Container" parent="Control" unique_id=37805570]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="MeadowInfoButton" type="TouchScreenButton" parent="Control/InfoBtn Container" unique_id=2089211246]
+position = Vector2(894, 0)
+scale = Vector2(0.14897959, 0.14897959)
+texture_normal = ExtResource("2_obqhc")
+script = ExtResource("3_0mjat")
+
+[node name="Area2D" type="Area2D" parent="Control" unique_id=353339175]
+position = Vector2(500, 608)
+monitorable = false
+script = ExtResource("4_yluqv")
+
+[node name="MeadowLiteZone" type="CollisionShape2D" parent="Control/Area2D" unique_id=842019634]
+shape = SubResource("RectangleShape2D_pfbe1")
+
+[node name="Node2D" parent="Control" unique_id=1318468648 instance=ExtResource("6_pfbe1")]
+top_level = true
+
+[node name="BackToMenu" type="TouchScreenButton" parent="." unique_id=12060889]
+scale = Vector2(0.475, 0.475)
+texture_normal = ExtResource("3_40yrc")
+script = ExtResource("4_0mjat")
+
+[connection signal="pressed" from="Control/InfoBtn Container/MeadowInfoButton" to="Control/InfoBtn Container/MeadowInfoButton" method="_on_pressed"]
+[connection signal="area_entered" from="Control/Area2D" to="Control/Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="Control/Area2D" to="Control/Area2D" method="_on_area_exited"]
+[connection signal="pressed" from="BackToMenu" to="BackToMenu" method="_on_pressed"]

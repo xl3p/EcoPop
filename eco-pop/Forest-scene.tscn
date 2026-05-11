@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://tbq6th0kkb4b"]
+
+[ext_resource type="Texture2D" uid="uid://cafbayms03car" path="res://ForestBG.webp" id="1_mu16w"]
+[ext_resource type="Texture2D" uid="uid://d0opjbsj2lv31" path="res://info-Photoroom.png" id="2_3cn24"]
+[ext_resource type="Script" uid="uid://d084ubwf0d3wi" path="res://forest_info_button.gd" id="3_0isdk"]
+[ext_resource type="Texture2D" uid="uid://cbpaw4witqqaw" path="res://Back-Photoroom.png" id="3_m0n0c"]
+[ext_resource type="Script" uid="uid://upcj0cpx5h0d" path="res://back_to_menu.gd" id="4_0isdk"]
+[ext_resource type="Script" uid="uid://c37a28egeopd6" path="res://Forest_area_2d.gd" id="6_0x14h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwbr5"]
+size = Vector2(1000, 1216)
+
+[node name="Node2D" type="Node2D" unique_id=603655485]
+
+[node name="Control" type="Control" parent="." unique_id=1773603721]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="BG Container" type="Container" parent="Control" unique_id=1337067314]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/BG Container" unique_id=1287335788]
+position = Vector2(404, 559.00006)
+scale = Vector2(1.2130207, 1.2130207)
+texture = ExtResource("1_mu16w")
+
+[node name="InfoBtn Container" type="Container" parent="Control" unique_id=1764147526]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="ForestInfoButton" type="TouchScreenButton" parent="Control/InfoBtn Container" unique_id=1893747042]
+position = Vector2(894, 3)
+scale = Vector2(0.14897959, 0.14897959)
+texture_normal = ExtResource("2_3cn24")
+script = ExtResource("3_0isdk")
+
+[node name="BackToMenu" type="TouchScreenButton" parent="." unique_id=2107603162]
+scale = Vector2(0.475, 0.475)
+texture_normal = ExtResource("3_m0n0c")
+script = ExtResource("4_0isdk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1855992495]
+position = Vector2(500, 608)
+monitorable = false
+script = ExtResource("6_0x14h")
+
+[node name="MeadowLiteZone" type="CollisionShape2D" parent="Area2D" unique_id=860479782]
+shape = SubResource("RectangleShape2D_uwbr5")
+
+[connection signal="pressed" from="Control/InfoBtn Container/ForestInfoButton" to="Control/InfoBtn Container/ForestInfoButton" method="_on_pressed"]
+[connection signal="pressed" from="BackToMenu" to="BackToMenu" method="_on_pressed"]
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]

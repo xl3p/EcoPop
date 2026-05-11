@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dky3p5q7aknkj"]
+
+[ext_resource type="Texture2D" uid="uid://drwb6gofkw7o2" path="res://Ящерица-Photoroom.png" id="1_h0wes"]
+[ext_resource type="Script" uid="uid://drk1wpae3nvxu" path="res://Ящерица_area_2d.gd" id="2_mboiu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r4gd"]
+size = Vector2(578, 874)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul14a"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[node name="Ящерица" type="Control" unique_id=2020671816]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Ящерица" type="Sprite2D" parent="." unique_id=1062536804]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_h0wes")
+
+[node name="Label" type="Label" parent="." unique_id=2094594968]
+layout_mode = 0
+offset_left = -185.0
+offset_top = 414.0
+offset_right = 201.0
+offset_bottom = 524.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Ящерица"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=968350161]
+script = ExtResource("2_mboiu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1726925656]
+position = Vector2(7, 83)
+shape = SubResource("RectangleShape2D_1r4gd")
+
+[node name="ConditionLog" type="Label" parent="Area2D" unique_id=108931214]
+visible = false
+offset_left = -256.0
+offset_top = -632.0
+offset_right = 256.0
+offset_bottom = -432.0
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_ul14a")
+
+[node name="Hungry" type="Label" parent="Area2D/ConditionLog" unique_id=1126925932]
+visible = false
+layout_mode = 0
+offset_left = 104.0
+offset_top = 32.0
+offset_right = 401.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0.84039176, 0.08359001, 4.813075e-07, 1)
+theme_override_font_sizes/font_size = 50
+text = "Я голодный"
+
+[node name="UnLivble" type="Label" parent="Area2D/ConditionLog" unique_id=1351754265]
+visible = false
+layout_mode = 0
+offset_left = 56.0
+offset_top = 96.0
+offset_right = 460.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0.84039176, 0.08359001, 4.813075e-07, 1)
+theme_override_font_sizes/font_size = 50
+text = "Я здесь не живу"
+
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]

@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://brfjjxrbrw7py"]
+
+[ext_resource type="Texture2D" uid="uid://diwd6s38ysa6g" path="res://Клевер-Photoroom.png" id="1_ff18g"]
+[ext_resource type="Script" uid="uid://qpilj0vsj72f" path="res://Клевер_area_2d.gd" id="2_oa30j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kppwl"]
+size = Vector2(578, 874)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_joymp"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[node name="Клевер" type="Control" unique_id=45825046]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Клевер" type="Sprite2D" parent="." unique_id=1576367504]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ff18g")
+
+[node name="Label" type="Label" parent="." unique_id=984421900]
+layout_mode = 0
+offset_left = -185.0
+offset_top = 414.0
+offset_right = 201.0
+offset_bottom = 524.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "  Клевер"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1153383470]
+script = ExtResource("2_oa30j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1889889800]
+position = Vector2(7, 83)
+shape = SubResource("RectangleShape2D_kppwl")
+
+[node name="ConditionLog" type="Label" parent="Area2D" unique_id=1103861001]
+visible = false
+offset_left = -256.0
+offset_top = -632.0
+offset_right = 256.0
+offset_bottom = -432.0
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_joymp")
+
+[node name="Hungry" type="Label" parent="Area2D/ConditionLog" unique_id=1478386203]
+visible = false
+layout_mode = 0
+offset_left = 104.0
+offset_top = 32.0
+offset_right = 401.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0.84039176, 0.08359001, 4.813075e-07, 1)
+theme_override_font_sizes/font_size = 50
+text = "Я голодный"
+
+[node name="UnLivble" type="Label" parent="Area2D/ConditionLog" unique_id=1528956237]
+visible = false
+layout_mode = 0
+offset_left = 56.0
+offset_top = 96.0
+offset_right = 460.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0.84039176, 0.08359001, 4.813075e-07, 1)
+theme_override_font_sizes/font_size = 50
+text = "Я здесь не живу"
+
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]

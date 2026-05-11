@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://c58bmasbokv8i"]
+
+[ext_resource type="Texture2D" uid="uid://dn4hbldlakin7" path="res://a-fresh-lake-mirroring-snow-capped-peaks-vector.jpg" id="1_3untn"]
+[ext_resource type="Texture2D" uid="uid://bnvsv0dc8trjh" path="res://a-glassy-lake-mirroring-snow-capped-peaks-vector.jpg" id="1_qwwrp"]
+[ext_resource type="Script" uid="uid://cbnjrpl1ssih7" path="res://touch_screen_button.gd" id="2_4hnwl"]
+[ext_resource type="Script" uid="uid://byiixj6ynmto6" path="res://slect_forest_button.gd" id="4_6c37r"]
+[ext_resource type="Texture2D" uid="uid://b1hokumvhtxx3" path="res://m1000x1000.jpg" id="5_t1lwm"]
+[ext_resource type="Script" uid="uid://tgkqw4n4h63w" path="res://select_meadow_button.gd" id="6_lrfia"]
+[ext_resource type="PackedScene" uid="uid://4go3qn7h0t8t" path="res://Zones.tscn" id="7_lrfia"]
+
+[node name="Node2D" type="Node2D" unique_id=112596373]
+
+[node name="Control" type="Control" parent="." unique_id=348414469]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG Container" type="Container" parent="Control" unique_id=460092225]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="Control/BG Container" unique_id=1385235589]
+position = Vector2(-3, 0)
+polygon = PackedVector2Array(3, 0, 3, 1920, 1003, 1920, 1003, 0)
+
+[node name="Lake Container" type="Container" parent="Control" unique_id=1587047807]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="SelectLakeButton" type="TouchScreenButton" parent="Control/Lake Container" unique_id=1664407987]
+position = Vector2(240, 122)
+scale = Vector2(0.5285715, 0.58400226)
+texture_normal = ExtResource("1_3untn")
+script = ExtResource("2_4hnwl")
+
+[node name="Forest Container" type="Container" parent="Control" unique_id=123996693]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="SlectForestButton" type="TouchScreenButton" parent="Control/Forest Container" unique_id=294696738]
+position = Vector2(306, 757)
+scale = Vector2(0.48024312, 0.52176785)
+texture_normal = ExtResource("1_qwwrp")
+script = ExtResource("4_6c37r")
+
+[node name="Meadow Container" type="Container" parent="Control" unique_id=1534443188]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SelectMeadowButton" type="TouchScreenButton" parent="Control/Meadow Container" unique_id=260626928]
+position = Vector2(225.99997, 1296)
+scale = Vector2(0.578, 0.6227897)
+texture_normal = ExtResource("5_t1lwm")
+script = ExtResource("6_lrfia")
+
+[node name="Node2D" parent="." unique_id=1424539936 instance=ExtResource("7_lrfia")]
+visible = false
+
+[connection signal="pressed" from="Control/Lake Container/SelectLakeButton" to="Control/Lake Container/SelectLakeButton" method="_on_pressed"]
+[connection signal="pressed" from="Control/Forest Container/SlectForestButton" to="Control/Forest Container/SlectForestButton" method="_on_pressed"]
+[connection signal="pressed" from="Control/Meadow Container/SelectMeadowButton" to="Control/Meadow Container/SelectMeadowButton" method="_on_pressed"]

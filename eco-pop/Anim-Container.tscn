@@ -1,0 +1,202 @@
+[gd_scene format=3 uid="uid://dasuoxesrtmdo"]
+
+[ext_resource type="Script" uid="uid://re110skr54yo" path="res://Anims_grid_container.gd" id="1_ap0d0"]
+[ext_resource type="PackedScene" uid="uid://brtm4ahaaoga" path="res://Anim-Водоросль.tscn" id="1_duawj"]
+[ext_resource type="PackedScene" uid="uid://kvey6m8pit1m" path="res://Anim-Бабочка.tscn" id="2_tpk7m"]
+[ext_resource type="PackedScene" uid="uid://c8oqudhbrkdfw" path="res://Anim-Дуб.tscn" id="3_5nqdd"]
+[ext_resource type="PackedScene" uid="uid://cb8m17xtov0nd" path="res://Anim-Белка.tscn" id="4_ap0d0"]
+[ext_resource type="PackedScene" uid="uid://cv76i63ni5qpq" path="res://Anim-Головастик.tscn" id="5_sbypa"]
+[ext_resource type="PackedScene" uid="uid://brfjjxrbrw7py" path="res://Anim-Клвер.tscn" id="6_2kih8"]
+[ext_resource type="PackedScene" uid="uid://covicbe4wfjnu" path="res://Anim-Одуванчик.tscn" id="7_fklh5"]
+[ext_resource type="PackedScene" uid="uid://saup23fr86ix" path="res://Anim-Щука.tscn" id="8_bwab6"]
+[ext_resource type="PackedScene" uid="uid://cyli3n45armev" path="res://Anim-Лягушка.tscn" id="9_2pkiv"]
+[ext_resource type="PackedScene" uid="uid://xdw0nkyc45rp" path="res://Anim-Лиса.tscn" id="10_hsgrc"]
+[ext_resource type="PackedScene" uid="uid://binbpqvnug2dr" path="res://Anim-Мышь.tscn" id="11_qkuqo"]
+[ext_resource type="PackedScene" uid="uid://btfmw5cpdp3t8" path="res://Anim-Сова.tscn" id="12_xnjkw"]
+[ext_resource type="PackedScene" uid="uid://3tjwwkxymm4i" path="res://Anim-Кузнечик.tscn" id="13_onhg4"]
+[ext_resource type="PackedScene" uid="uid://dky3p5q7aknkj" path="res://Anim-Ящерица.tscn" id="14_rmeme"]
+[ext_resource type="PackedScene" uid="uid://dntscel8gr7mb" path="res://Anim-Стрекоза.tscn" id="15_2rx75"]
+[ext_resource type="Script" uid="uid://deoo1u054vb1k" path="res://ScrollContainerScroll.gd" id="17_sbypa"]
+
+[node name="ScrollContainer" type="ScrollContainer" unique_id=644452003]
+offset_top = 1220.0
+offset_right = 1000.0
+offset_bottom = 1920.0
+scroll_horizontal_custom_step = 0.0
+horizontal_scroll_mode = 0
+scroll_deadzone = 3
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=392380245]
+custom_minimum_size = Vector2(1000, 2000)
+layout_mode = 2
+columns = 3
+script = ExtResource("1_ap0d0")
+
+[node name="Control" type="Control" parent="GridContainer" unique_id=83750823]
+layout_mode = 2
+
+[node name="Бабочка" parent="GridContainer/Control" unique_id=1685808043 instance=ExtResource("2_tpk7m")]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 160.0
+offset_right = 112.0
+offset_bottom = 160.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Control2" type="Control" parent="GridContainer" unique_id=782956358]
+layout_mode = 2
+
+[node name="Водоросль" parent="GridContainer/Control2" unique_id=548679949 instance=ExtResource("1_duawj")]
+z_index = 19
+layout_mode = 0
+offset_left = 324.0
+offset_top = 160.0
+offset_right = 324.0
+offset_bottom = 160.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Control3" type="Control" parent="GridContainer" unique_id=120511361]
+layout_mode = 2
+
+[node name="Дуб" parent="GridContainer/Control3" unique_id=1543273930 instance=ExtResource("3_5nqdd")]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 160.0
+offset_right = 608.0
+offset_bottom = 160.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Control4" type="Control" parent="GridContainer" unique_id=111834859]
+layout_mode = 2
+
+[node name="Белка" parent="GridContainer/Control4" unique_id=473681526 instance=ExtResource("4_ap0d0")]
+layout_mode = 1
+offset_left = 840.0
+offset_top = 160.0
+offset_right = 840.0
+offset_bottom = 160.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Control5" type="Control" parent="GridContainer" unique_id=1699878460]
+layout_mode = 2
+
+[node name="Головастик" parent="GridContainer/Control5" unique_id=612437736 instance=ExtResource("5_sbypa")]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 640.0
+offset_right = 112.0
+offset_bottom = 640.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Control6" type="Control" parent="GridContainer" unique_id=1955584239]
+layout_mode = 2
+
+[node name="Клевер" parent="GridContainer/Control6" unique_id=45825046 instance=ExtResource("6_2kih8")]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 640.0
+offset_right = 324.0
+offset_bottom = 640.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Control7" type="Control" parent="GridContainer" unique_id=57181541]
+layout_mode = 2
+
+[node name="Одуванчик" parent="GridContainer/Control7" unique_id=607825404 instance=ExtResource("7_fklh5")]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 640.0
+offset_right = 608.0
+offset_bottom = 640.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Control8" type="Control" parent="GridContainer" unique_id=1376154149]
+layout_mode = 2
+
+[node name="Control" parent="GridContainer/Control8" unique_id=1008175101 instance=ExtResource("8_bwab6")]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 640.0
+offset_right = 840.0
+offset_bottom = 640.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Control9" type="Control" parent="GridContainer" unique_id=900451026]
+layout_mode = 2
+
+[node name="Лягушка" parent="GridContainer/Control9" unique_id=243475841 instance=ExtResource("9_2pkiv")]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 1120.0
+offset_right = 112.0
+offset_bottom = 1120.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Control10" type="Control" parent="GridContainer" unique_id=360232834]
+layout_mode = 2
+
+[node name="Лиса" parent="GridContainer/Control10" unique_id=76584291 instance=ExtResource("10_hsgrc")]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 1120.0
+offset_right = 324.0
+offset_bottom = 1120.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Control11" type="Control" parent="GridContainer" unique_id=511717109]
+layout_mode = 2
+
+[node name="Мышь" parent="GridContainer/Control11" unique_id=468962584 instance=ExtResource("11_qkuqo")]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 1120.0
+offset_right = 608.0
+offset_bottom = 1120.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Control12" type="Control" parent="GridContainer" unique_id=1959058560]
+layout_mode = 2
+
+[node name="Сова" parent="GridContainer/Control12" unique_id=1023705942 instance=ExtResource("12_xnjkw")]
+layout_mode = 0
+offset_left = 812.0
+offset_top = 1120.0
+offset_right = 812.0
+offset_bottom = 1120.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Control13" type="Control" parent="GridContainer" unique_id=1193297749]
+layout_mode = 2
+
+[node name="Кузнечик" parent="GridContainer/Control13" unique_id=1554798857 instance=ExtResource("13_onhg4")]
+layout_mode = 1
+offset_left = 112.0
+offset_top = 1592.0
+offset_right = 112.0
+offset_bottom = 1592.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Control14" type="Control" parent="GridContainer" unique_id=2012395083]
+layout_mode = 2
+
+[node name="Ящерица" parent="GridContainer/Control14" unique_id=2020671816 instance=ExtResource("14_rmeme")]
+layout_mode = 1
+offset_left = 332.0
+offset_top = 1592.0
+offset_right = 332.0
+offset_bottom = 1592.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Control15" type="Control" parent="GridContainer" unique_id=2078490857]
+layout_mode = 2
+
+[node name="Стрекоза" parent="GridContainer/Control15" unique_id=1611380122 instance=ExtResource("15_2rx75")]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 1592.0
+offset_right = 616.0
+offset_bottom = 1592.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Node" type="Node" parent="." unique_id=290651236]
+script = ExtResource("17_sbypa")

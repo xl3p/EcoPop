@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://c5oubxyykyja6"]
+
+[ext_resource type="Texture2D" uid="uid://yn72l2hqc6xx" path="res://Солнце-Photoroom.png" id="1_6hvvm"]
+[ext_resource type="Texture2D" uid="uid://cbpaw4witqqaw" path="res://Back-Photoroom.png" id="2_n80oy"]
+[ext_resource type="Script" uid="uid://pwvadrdvnprc" path="res://lake_info_back_button.gd" id="3_n80oy"]
+
+[node name="Node2D" type="Node2D" unique_id=623212996]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=974953171]
+color = Color(0.025363795, 0.025363805, 0.02536378, 1)
+polygon = PackedVector2Array(0, 1920, 1000, 1920, 1000, 0, 0, 0)
+
+[node name="Control" type="Control" parent="." unique_id=1116664218]
+layout_mode = 3
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Стрелка" type="Label" parent="Control" unique_id=2113328410]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 627.0
+offset_right = 480.0
+offset_bottom = 690.0
+theme_override_font_sizes/font_size = 45
+text = "/\\"
+
+[node name="Водоросль" type="Label" parent="Control" unique_id=2738096]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 761.0
+offset_right = 588.0
+offset_bottom = 824.0
+theme_override_font_sizes/font_size = 45
+text = "Водоросль"
+
+[node name="Стрелка2" type="Label" parent="Control" unique_id=851559520]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 889.0
+offset_right = 480.0
+offset_bottom = 952.0
+theme_override_font_sizes/font_size = 45
+text = "/\\"
+
+[node name="Головастик" type="Label" parent="Control" unique_id=1829616617]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 1010.0
+offset_right = 604.0
+offset_bottom = 1073.0
+theme_override_font_sizes/font_size = 45
+text = "Головастик"
+
+[node name="Стрелка3" type="Label" parent="Control" unique_id=1573910548]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 1146.0
+offset_right = 483.0
+offset_bottom = 1209.0
+theme_override_font_sizes/font_size = 45
+text = "/\\"
+
+[node name="Стрекоза" type="Label" parent="Control" unique_id=1709277659]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 1280.0
+offset_right = 610.0
+offset_bottom = 1343.0
+theme_override_font_sizes/font_size = 45
+text = "  Стрекоза"
+
+[node name="Стрелка4" type="Label" parent="Control" unique_id=759512251]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 1392.0
+offset_right = 479.0
+offset_bottom = 1455.0
+theme_override_font_sizes/font_size = 45
+text = "/\\"
+
+[node name="Лягушка" type="Label" parent="Control" unique_id=967083190]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 1526.0
+offset_right = 606.0
+offset_bottom = 1589.0
+theme_override_font_sizes/font_size = 45
+text = "  Лягушка"
+
+[node name="Стрелка5" type="Label" parent="Control" unique_id=1615801421]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 1634.0
+offset_right = 483.0
+offset_bottom = 1697.0
+theme_override_font_sizes/font_size = 45
+text = "/\\"
+
+[node name="Щука" type="Label" parent="Control" unique_id=1281204116]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 1768.0
+offset_right = 610.0
+offset_bottom = 1831.0
+theme_override_font_sizes/font_size = 45
+text = "    Щука"
+
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=1805780772]
+position = Vector2(500, 297)
+texture = ExtResource("1_6hvvm")
+
+[node name="LakeInfoBackButton" type="TouchScreenButton" parent="Control" unique_id=650808443]
+position = Vector2(-23, 111)
+scale = Vector2(0.37613094, 0.37083334)
+texture_normal = ExtResource("2_n80oy")
+script = ExtResource("3_n80oy")
+
+[connection signal="pressed" from="Control/LakeInfoBackButton" to="Control/LakeInfoBackButton" method="_on_pressed"]

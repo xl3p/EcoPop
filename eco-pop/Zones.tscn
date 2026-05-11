@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://4go3qn7h0t8t"]
+
+[ext_resource type="Script" uid="uid://cpfteuy8dx55o" path="res://zones.gd" id="1_s81gj"]
+[ext_resource type="PackedScene" uid="uid://c6euvuyc28crl" path="res://Menu-scene.tscn" id="2_ddygq"]
+[ext_resource type="Texture2D" uid="uid://d0opjbsj2lv31" path="res://info-Photoroom.png" id="2_s81gj"]
+[ext_resource type="Script" uid="uid://jgskoij2s8r3" path="res://lake_info_button.gd" id="3_02qww"]
+[ext_resource type="Script" uid="uid://cmras1iesp2dq" path="res://Lake_area_2d.gd" id="4_3h8le"]
+[ext_resource type="PackedScene" uid="uid://c5oubxyykyja6" path="res://LakeInfo-scene.tscn" id="4_5ek3o"]
+[ext_resource type="Texture2D" uid="uid://cafbayms03car" path="res://ForestBG.webp" id="5_hua8a"]
+[ext_resource type="Script" uid="uid://d084ubwf0d3wi" path="res://forest_info_button.gd" id="6_1ismc"]
+[ext_resource type="Texture2D" uid="uid://c65oo0gqde71j" path="res://Meadow.jpg" id="7_5ek3o"]
+[ext_resource type="PackedScene" uid="uid://cicmuorhh2ds6" path="res://ForestInfo-scene.tscn" id="8_scuye"]
+[ext_resource type="Script" uid="uid://dud7788i5c0xt" path="res://meadow_info_button.gd" id="8_xbmmm"]
+[ext_resource type="Script" uid="uid://dqpjprj13q41p" path="res://Meadow_area_2d.gd" id="9_scuye"]
+[ext_resource type="Script" uid="uid://c37a28egeopd6" path="res://Forest_area_2d.gd" id="9_xbmmm"]
+[ext_resource type="Texture2D" uid="uid://cbpaw4witqqaw" path="res://Back-Photoroom.png" id="11_3h8le"]
+[ext_resource type="PackedScene" uid="uid://ku5h7aax185j" path="res://MeadowInfo-scene.tscn" id="11_qfc3x"]
+[ext_resource type="Script" uid="uid://upcj0cpx5h0d" path="res://back_to_menu.gd" id="12_hua8a"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qfc3x"]
+load_path = "res://.godot/imported/LakeBG.webp-ee7ce3dd2a17625d5660247a985a0a55.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4ult"]
+size = Vector2(1000, 1195)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scuye"]
+size = Vector2(1000, 1195)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxjt3"]
+size = Vector2(1000, 1194)
+
+[node name="Node2D" type="Node2D" unique_id=1424539936]
+script = ExtResource("1_s81gj")
+
+[node name="Control2" type="Control" parent="." unique_id=1212233423]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Lake" type="Control" parent="Control2" unique_id=1682475522]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG Container" type="Container" parent="Control2/Lake" unique_id=1092799064]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control2/Lake/BG Container" unique_id=790121396]
+position = Vector2(532, 956)
+scale = Vector2(7.0851855, 7.085185)
+texture = SubResource("CompressedTexture2D_qfc3x")
+
+[node name="InfoBtn Container" type="Container" parent="Control2/Lake" unique_id=783625986]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_right = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="LakeInfo Button" type="TouchScreenButton" parent="Control2/Lake/InfoBtn Container" unique_id=1264606559]
+position = Vector2(934, 0)
+scale = Vector2(0.14897959, 0.14897959)
+texture_normal = ExtResource("2_s81gj")
+script = ExtResource("3_02qww")
+
+[node name="Node2D" parent="Control2/Lake/InfoBtn Container/LakeInfo Button" unique_id=623212996 instance=ExtResource("4_5ek3o")]
+visible = false
+top_level = true
+z_index = 1500
+
+[node name="Area2D" type="Area2D" parent="Control2/Lake" unique_id=1521221503]
+position = Vector2(500, 608)
+monitorable = false
+script = ExtResource("4_3h8le")
+
+[node name="MeadowLiteZone" type="CollisionShape2D" parent="Control2/Lake/Area2D" unique_id=1234723294]
+shape = SubResource("RectangleShape2D_o4ult")
+
+[node name="Forest" type="Control" parent="Control2" unique_id=463535036]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="BG Container" type="Container" parent="Control2/Forest" unique_id=867522478]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control2/Forest/BG Container" unique_id=932851306]
+position = Vector2(404, 559.00006)
+scale = Vector2(1.2130207, 1.2130207)
+texture = ExtResource("5_hua8a")
+
+[node name="InfoBtn Container" type="Container" parent="Control2/Forest" unique_id=55854665]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="ForestInfoButton" type="TouchScreenButton" parent="Control2/Forest/InfoBtn Container" unique_id=1188716474]
+position = Vector2(894, 3)
+scale = Vector2(0.14897959, 0.14897959)
+texture_normal = ExtResource("2_s81gj")
+script = ExtResource("6_1ismc")
+
+[node name="Node2D" parent="Control2/Forest/InfoBtn Container/ForestInfoButton" unique_id=1539213265 instance=ExtResource("8_scuye")]
+visible = false
+top_level = true
+z_index = 1500
+
+[node name="Area2D" type="Area2D" parent="Control2/Forest" unique_id=1630764929]
+position = Vector2(504, 632)
+monitorable = false
+script = ExtResource("9_xbmmm")
+
+[node name="MeadowLiteZone" type="CollisionShape2D" parent="Control2/Forest/Area2D" unique_id=1607889471]
+position = Vector2(-2, -12)
+shape = SubResource("RectangleShape2D_scuye")
+
+[node name="Meadow" type="Control" parent="Control2" unique_id=1955668327]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="BG Container" type="Container" parent="Control2/Meadow" unique_id=1887799528]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control2/Meadow/BG Container" unique_id=21773580]
+position = Vector2(499.18927, 451.87476)
+scale = Vector2(2.1215644, 2.1215646)
+texture = ExtResource("7_5ek3o")
+
+[node name="InfoBtn Container" type="Container" parent="Control2/Meadow" unique_id=1067835092]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="MeadowInfoButton" type="TouchScreenButton" parent="Control2/Meadow/InfoBtn Container" unique_id=2097513363]
+position = Vector2(894, 0)
+scale = Vector2(0.14897959, 0.14897959)
+texture_normal = ExtResource("2_s81gj")
+script = ExtResource("8_xbmmm")
+
+[node name="Node2D" parent="Control2/Meadow/InfoBtn Container/MeadowInfoButton" unique_id=1915829439 instance=ExtResource("11_qfc3x")]
+visible = false
+top_level = true
+z_index = 1500
+
+[node name="Area2D" type="Area2D" parent="Control2/Meadow" unique_id=1138749025]
+position = Vector2(500, 608)
+monitorable = false
+script = ExtResource("9_scuye")
+
+[node name="MeadowLiteZone" type="CollisionShape2D" parent="Control2/Meadow/Area2D" unique_id=675124826]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_yxjt3")
+
+[node name="Node2D" parent="Control2" unique_id=1318468648 instance=ExtResource("2_ddygq")]
+top_level = true
+
+[node name="BackToMenu" type="TouchScreenButton" parent="Control2" unique_id=524648018]
+scale = Vector2(0.475, 0.475)
+texture_normal = ExtResource("11_3h8le")
+script = ExtResource("12_hua8a")
+
+[node name="Label" type="Label" parent="." unique_id=221151754]
+offset_left = 447.5
+offset_top = 23.0
+offset_right = 552.5
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 50
+text = "0/15"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Control2/Lake/InfoBtn Container/LakeInfo Button" to="Control2/Lake/InfoBtn Container/LakeInfo Button" method="_on_pressed"]
+[connection signal="area_entered" from="Control2/Lake/Area2D" to="Control2/Lake/Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="Control2/Lake/Area2D" to="Control2/Lake/Area2D" method="_on_area_exited"]
+[connection signal="pressed" from="Control2/Forest/InfoBtn Container/ForestInfoButton" to="Control2/Forest/InfoBtn Container/ForestInfoButton" method="_on_pressed"]
+[connection signal="area_entered" from="Control2/Forest/Area2D" to="Control2/Forest/Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="Control2/Forest/Area2D" to="Control2/Forest/Area2D" method="_on_area_exited"]
+[connection signal="pressed" from="Control2/Meadow/InfoBtn Container/MeadowInfoButton" to="Control2/Meadow/InfoBtn Container/MeadowInfoButton" method="_on_pressed"]
+[connection signal="area_entered" from="Control2/Meadow/Area2D" to="Control2/Meadow/Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="Control2/Meadow/Area2D" to="Control2/Meadow/Area2D" method="_on_area_exited"]
+[connection signal="pressed" from="Control2/BackToMenu" to="Control2/BackToMenu" method="_on_pressed"]
