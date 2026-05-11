@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c6euvuyc28crl"]
+
+[ext_resource type="PackedScene" uid="uid://dasuoxesrtmdo" path="res://Anim-Container.tscn" id="1_71gaf"]
+
+[node name="Node2D" type="Node2D" unique_id=1318468648]
+
+[node name="Control" type="Control" parent="." unique_id=1967111190]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu Container" type="Container" parent="Control" unique_id=2041969845]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MenuBg" type="Polygon2D" parent="Control/Menu Container" unique_id=1630180493]
+position = Vector2(19, -1215)
+scale = Vector2(1, 1.6535628)
+polygon = PackedVector2Array(1, 1920.0966, 819.20776, 1920, 1001, 1920.0966, 1001, 1494.3491, 497, 1494.3491, 1, 1494.3491)
+
+[node name="ScrollContainer" parent="." unique_id=644452003 instance=ExtResource("1_71gaf")]
+z_index = 35

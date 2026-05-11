@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bx08qrdal12wc"]
+
+[ext_resource type="Texture2D" uid="uid://d2h55fna76wlp" path="res://icon.svg" id="1_8amj3"]
+[ext_resource type="Texture2D" uid="uid://d0opjbsj2lv31" path="res://info-Photoroom.png" id="2_c5pbs"]
+[ext_resource type="Texture2D" uid="uid://yn72l2hqc6xx" path="res://Солнце-Photoroom.png" id="3_cp2na"]
+
+[node name="Node2D" type="Node2D" unique_id=1299878276]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1409990860]
+offset_right = 1000.0
+offset_bottom = 1000.0
+scroll_vertical = 8
+horizontal_scroll_mode = 2
+vertical_scroll_mode = 2
+scroll_hint_mode = 1
+tile_scroll_hint = true
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=751184949]
+custom_minimum_size = Vector2(1000, 2000)
+layout_mode = 2
+columns = 3
+
+[node name="Sprite2D4" type="Sprite2D" parent="ScrollContainer/GridContainer" unique_id=2078177669]
+position = Vector2(392, 1776)
+texture = ExtResource("1_8amj3")
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/GridContainer" unique_id=1624692978]
+position = Vector2(160, 136)
+texture = ExtResource("1_8amj3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ScrollContainer/GridContainer" unique_id=1712683539]
+position = Vector2(832, 288)
+texture = ExtResource("3_cp2na")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ScrollContainer/GridContainer" unique_id=392633437]
+position = Vector2(424, 720)
+texture = ExtResource("2_c5pbs")
